@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Dashboard</title>
+  <link rel="stylesheet" href="/teacher.css">
+</head>
+<body>
+  <main class="container">
+    <section id="loginCard" class="card narrow">
+      <h1>Teacher Dashboard</h1>
+      <p>Enter the teacher PIN to continue.</p>
+      <form id="loginForm">
+        <input id="pin" type="password" inputmode="numeric" autocomplete="off"
+               placeholder="Teacher PIN" required>
+        <button>Log in</button>
+      </form>
+      <div id="loginMessage"></div>
+    </section>
+
+    <section id="dashboard" hidden>
+      <header class="dashboard-header">
+        <div>
+          <h1>Attendance Dashboard</h1>
+          <p>Arrival and departure timestamps are recorded by the server and displayed in New Zealand time.</p>
+        </div>
+        <div class="actions">
+          <button id="csvBtn">Export CSV</button>
+          <button id="excelBtn">Export Excel</button>
+          <button id="logoutBtn" class="secondary">Log out</button>
+        </div>
+      </header>
+
+      <section class="card controls">
+        <input id="search" placeholder="Search students...">
+        <input id="date" type="date">
+        <button id="clearFilters" class="secondary">Clear</button>
+      </section>
+
+      <section class="card">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Student</th>
+                <th>Date</th>
+                <th>Arrived</th>
+                <th>Left</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="attendanceBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card danger-zone">
+        <h2>Student Management</h2>
+        <form id="addStudentForm" class="add-form">
+          <input id="newStudent" placeholder="New student name" maxlength="100" required>
+          <button>Add student</button>
+        </form>
+
+        <h2>Danger Zone</h2>
+        <p>This permanently deletes all attendance records from the database.</p>
+        <button id="resetBtn" class="danger">Reset All Attendance</button>
+        <div id="actionMessage"></div>
+      </section>
+    </section>
+  </main>
+
+  <script src="/teacher.js"></script>
+</body>
+</html>

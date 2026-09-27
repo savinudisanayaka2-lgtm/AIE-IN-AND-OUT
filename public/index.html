@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class Attendance</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Class Attendance</h1>
+      <p>NZ time: <span id="liveClock">Loading...</span></p>
+    </div>
+    <a class="teacher-link" href="/teacher.html">Teacher Dashboard</a>
+  </header>
+
+  <main class="container">
+    <section class="card student-login">
+      <h2>Student Check-In</h2>
+      <p>Select your name, then press the attendance button.</p>
+
+      <label for="studentSelect">Student name</label>
+      <select id="studentSelect">
+        <option value="">Loading students...</option>
+      </select>
+
+      <button id="attendanceBtn" class="attendance-btn" disabled>
+        I'M HERE
+      </button>
+
+      <div id="message" class="message"></div>
+      <div id="myEvents" class="my-events"></div>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>
