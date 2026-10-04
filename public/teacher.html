@@ -44,6 +44,8 @@
             <thead>
               <tr>
                 <th>Student</th>
+                <th>Branch</th>
+                <th>Subject</th>
                 <th>Date</th>
                 <th>Arrived</th>
                 <th>Left</th>
@@ -58,11 +60,14 @@
       <section class="card danger-zone">
         <h2>Student Management</h2>
         <form id="addStudentForm" class="add-form">
-          <input id="newStudent" placeholder="New student name" maxlength="100" required>
+          <input id="newStudent" placeholder="Student name" maxlength="100" required>
+          <input id="newStudentEmail" type="email" placeholder="Student email">
+          <input id="newStudentClerkId" placeholder="Clerk User ID">
           <button>Add student</button>
         </form>
 
         <h2>Danger Zone</h2>
+        <p>Add a student and link their Clerk User ID. Branch and subject assignment will be connected to the student profile tools in the next admin pass.</p>
         <p>This permanently deletes all attendance records from the database.</p>
         <button id="resetBtn" class="danger">Reset All Attendance</button>
         <div id="actionMessage"></div>

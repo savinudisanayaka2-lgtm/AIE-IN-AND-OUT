@@ -21,7 +21,7 @@ Create a PostgreSQL database named `attendance`.
 
 Copy `.env.example` to `.env` and set:
 
-```
+```env
 DATABASE_URL=postgresql://postgres:YOUR_PASSWORD@localhost:5432/attendance
 JWT_SECRET=put-a-long-random-secret-here
 TEACHER_PIN_HASH=SHA256_HASH_OF_YOUR_PIN

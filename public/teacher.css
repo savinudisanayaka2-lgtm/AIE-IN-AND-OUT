@@ -89,12 +89,13 @@ th, td {
 th { color: #aeb6c2; }
 
 .add-form {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
   gap: 10px;
   margin-bottom: 30px;
 }
 
-.add-form input { flex: 1; }
+.add-form input { min-width: 0; }
 
 .danger-zone {
   border-color: #6f3030;
@@ -103,7 +104,7 @@ th { color: #aeb6c2; }
 @media (max-width: 750px) {
   .dashboard-header { flex-direction: column; align-items: stretch; }
   .controls { grid-template-columns: 1fr; }
-  .add-form { flex-direction: column; }
+  .add-form { grid-template-columns: 1fr; }
 }
 
 

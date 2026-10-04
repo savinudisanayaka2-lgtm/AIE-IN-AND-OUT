@@ -80,6 +80,12 @@ async function loadAttendance() {
     const name = document.createElement("td");
     name.textContent = row.name;
 
+    const branch = document.createElement("td");
+    branch.textContent = row.branch || "—";
+
+    const subject = document.createElement("td");
+    subject.textContent = row.subject || "—";
+
     const dateCell = document.createElement("td");
     dateCell.textContent = nzDate(row.attendance_date);
 
@@ -93,12 +99,12 @@ async function loadAttendance() {
     status.textContent = row.left_at ? "Complete" : "In class";
     status.className = row.left_at ? "status-complete" : "status-in-class";
 
-    tr.append(name, dateCell, arrived, left, status);
+    tr.append(name, branch, subject, dateCell, arrived, left, status);
     body.appendChild(tr);
   }
 
   if (!rows.length) {
-    body.innerHTML = '<tr><td colspan="5">No attendance records found.</td></tr>';
+    body.innerHTML = '<tr><td colspan="7">No attendance records found.</td></tr>';
   }
 }
 
@@ -154,7 +160,7 @@ document.getElementById("addStudentForm").addEventListener("submit", async (e) =
   const response = await fetch("/api/teacher/students", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ name: input.value })
+    body: JSON.stringify({ name: input.value, email: document.getElementById("newStudentEmail").value, clerkUserId: document.getElementById("newStudentClerkId").value })
   });
 
   const data = await response.json();
@@ -163,7 +169,7 @@ document.getElementById("addStudentForm").addEventListener("submit", async (e) =
     ? `${data.name} added.`
     : (data.error || "Could not add student.");
 
-  if (response.ok) input.value = "";
+  if (response.ok) { input.value = ""; document.getElementById("newStudentEmail").value = ""; document.getElementById("newStudentClerkId").value = ""; }
 });
 
 checkLogin();

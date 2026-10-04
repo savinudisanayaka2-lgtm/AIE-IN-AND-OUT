@@ -3,37 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Class Attendance</title>
+  <title>AIE In & Out</title>
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <header class="topbar">
-    <div>
-      <h1>Class Attendance</h1>
-      <p>NZ time: <span id="liveClock">Loading...</span></p>
-    </div>
-    <a class="teacher-link" href="/teacher.html">Teacher Dashboard</a>
-  </header>
+  <main class="role-page">
+    <section class="role-card">
+      <div class="brand">AIE</div>
+      <p class="eyebrow">AIE IN & OUT</p>
+      <h1>Who are you?</h1>
+      <p class="subtitle">Choose how you want to continue.</p>
 
-  <main class="container">
-    <section class="card student-login">
-      <h2>Student Check-In</h2>
-      <p>Select your name, then press the attendance button.</p>
+      <div class="role-options">
+        <a class="role-option" href="/student-login.html">
+          <span class="role-icon">🎓</span>
+          <span class="role-copy">
+            <strong>Student</strong>
+            <small>Sign in with your student account</small>
+          </span>
+          <span class="arrow">→</span>
+        </a>
 
-      <label for="studentSelect">Student name</label>
-      <select id="studentSelect">
-        <option value="">Loading students...</option>
-      </select>
-
-      <button id="attendanceBtn" class="attendance-btn" disabled>
-        I'M HERE
-      </button>
-
-      <div id="message" class="message"></div>
-      <div id="myEvents" class="my-events"></div>
+        <a class="role-option teacher-option" href="/teacher.html">
+          <span class="role-icon">👨‍🏫</span>
+          <span class="role-copy">
+            <strong>Teacher</strong>
+            <small>Continue with the teacher PIN</small>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
     </section>
   </main>
-
-  <script src="/app.js"></script>
 </body>
 </html>

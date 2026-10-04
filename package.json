@@ -1,14 +1,14 @@
 {
-  "name": "class-attendance-system",
-  "version": "1.1.0",
+  "name": "aie-in-and-out",
+  "version": "2.0.0",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "nodemon server.js",
-    "start": "node server.js",
-    "build": "node --watch server.js"
+    "start": "node server.js"
   },
   "dependencies": {
+    "@clerk/backend": "^2.28.0",
     "cookie-parser": "^1.4.7",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
@@ -21,3 +21,4 @@
     "nodemon": "^3.1.10"
   }
 }
+
