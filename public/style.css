@@ -1,0 +1,130 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: #101216;
+  color: #f5f7fa;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 22px 6%;
+  background: #171a20;
+  border-bottom: 1px solid #2c313a;
+}
+
+.topbar h1 { margin: 0 0 5px; }
+.topbar p { margin: 0; color: #aeb6c2; }
+
+.teacher-link {
+  color: white;
+  text-decoration: none;
+  background: #2d6cdf;
+  padding: 12px 16px;
+  border-radius: 10px;
+}
+
+.container {
+  width: min(900px, 92%);
+  margin: 45px auto;
+}
+
+.card {
+  background: #191d24;
+  border: 1px solid #2c313a;
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 15px 45px rgba(0,0,0,.25);
+}
+
+.student-login {
+  max-width: 650px;
+  margin: auto;
+  text-align: center;
+}
+
+.student-login p { color: #aeb6c2; }
+
+label {
+  display: block;
+  text-align: left;
+  margin: 25px 0 8px;
+  font-weight: bold;
+}
+
+select, input {
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #3a414d;
+  background: #101216;
+  color: white;
+  font-size: 1rem;
+}
+
+.attendance-btn {
+  width: 100%;
+  margin-top: 25px;
+  min-height: 180px;
+  border: 0;
+  border-radius: 20px;
+  background: #2d6cdf;
+  color: white;
+  font-size: clamp(2rem, 8vw, 4.5rem);
+  font-weight: 900;
+  cursor: pointer;
+  transition: transform .1s, opacity .2s;
+}
+
+.attendance-btn:active:not(:disabled) { transform: scale(.98); }
+.attendance-btn:disabled { opacity: .45; cursor: not-allowed; }
+
+.message {
+  min-height: 25px;
+  margin-top: 18px;
+  font-weight: bold;
+}
+
+.success { color: #63e6a1; }
+.error { color: #ff7777; }
+
+.my-events {
+  margin-top: 18px;
+  text-align: left;
+}
+
+.event {
+  padding: 12px;
+  margin-top: 8px;
+  background: #11151a;
+  border-radius: 8px;
+  color: #cbd2dc;
+}
+
+@media (max-width: 600px) {
+  .topbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .teacher-link { text-align: center; }
+  .card { padding: 20px; }
+  .container { margin-top: 25px; }
+}
+
+
+.attendance-btn.leaving {
+  background: #c9821f;
+}
+
+.attendance-btn.complete {
+  background: #3a414d;
+  font-size: clamp(1.4rem, 5vw, 2.8rem);
+  cursor: not-allowed;
+  opacity: .85;
+}
